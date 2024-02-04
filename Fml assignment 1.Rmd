@@ -1,0 +1,72 @@
+---
+title: "vivek fml 1"
+author: "vivek reddy"
+date: "2024-02-04"
+output:
+  html_document:
+    df_print: paged
+---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+```{r}
+data <- read.csv("C:\\Users\\Vivek\\OneDrive\\Desktop\\cars dataset.csv")
+
+```
+
+```{r}
+
+summary(data)
+
+```
+
+```{r}
+head(data)
+```
+
+```{r}
+mean(data$rating)
+```
+```{r}
+median(data$reviews_count)
+```
+
+```{r}
+library(ggplot2)
+# Histogram plot for engine_displacement
+ggplot(data, aes(x = engine_displacement)) +
+  geom_histogram(binwidth = 200) +
+  labs(title = "Histogram of Engine Displacement",
+       x = "Engine Displacement",
+       y = "Frequency")
+
+```
+
+```{r}
+# Load ggplot2 library
+library(ggplot2)
+
+# Scatter plot for engine_displacement and fuel_tank_capacity
+ggplot(data, aes(x = engine_displacement, y = fuel_tank_capacity)) +
+  geom_point() +
+  labs(title = "Scatter Plot of Engine Displacement vs. Fuel Tank Capacity",
+       x = "Engine Displacement",
+       y = "Fuel Tank Capacity")
+
+```
+
+
+
+```{R}
+
+min_cars <- min(data$fuel_type)
+
+cat("Minimum cars:", min_cars, "\n" )
+
+```
+```{r}
+max_cars <- max(data$body_type)
+
+cat("Maximum cars:", max_cars, "\n")
+
+```
